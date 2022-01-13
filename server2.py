@@ -72,7 +72,7 @@ def start():
                         server.send_message(user["connection"], message)
                 # アドミンでないならアドミンに送信
 
-    server = WebsocketServer(port=8000, host='0.0.0.0')
+    server = WebsocketServer(port=int(os.environ.get('PORT', 8000)), host='0.0.0.0')
     # イベントで使うメソッドの設定
 
     server.set_fn_new_client(new_client)
