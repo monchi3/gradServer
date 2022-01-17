@@ -33,9 +33,9 @@ def start():
         
         #print('Client {}:{} has left.'.format(
         #    client['address'][0], client['address'][1]))
-        users.pop(client['id'])
+        #users.pop(client['id'])
 
-        print(client['address'], "closed")
+        #print(client['address'], "closed")
 
     def message_received(client, server, message):
         global users
