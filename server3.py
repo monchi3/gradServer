@@ -12,7 +12,18 @@ app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 user_ref = db.collection(u'user')
 
+clients ={}
 
+class Handler(WebSocket):
+    def handleMessage(self):
+        print("New client has joined")
+        
 
+    def handleConncted(self):
+        print("bbb")
 
+    def handleClose(self):        
+        print("ccc")
 
+server = SimpleWebSocketServer("0.0.0.0",int(os.getenv("PORT",8000)),Handler)
+server.serveforever()
