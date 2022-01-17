@@ -30,8 +30,9 @@ def start():
         for user in users.values():
             if user["isAdmin"] == True:
                 server.send_message(user["connection"],"1"+","+users[client['id']]["userID"]+",,,,,,,")
-        print('Client {}:{} has left.'.format(
-            client['address'][0], client['address'][1]))
+        
+        #print('Client {}:{} has left.'.format(
+        #    client['address'][0], client['address'][1]))
         users.pop(client['id'])
 
         print(client['address'], "closed")
