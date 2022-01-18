@@ -19,6 +19,7 @@ def start():
     def new_client(client, server):
         print('New client {}:{} has joined.'.format(
             client['address'][0], client['address'][1]))
+        print(client['id'])
         server.send_message(client, 'login')
         global users
         users[client['id']] = {"state": 0,
